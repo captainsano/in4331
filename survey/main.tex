@@ -1,0 +1,93 @@
+\documentclass{format}
+
+\usepackage[english]{babel}
+\usepackage{blindtext}
+\usepackage{enumitem}
+\usepackage[numbers]{natbib}
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\maketitle}{\@copyrightspace}{}{}{}
+\makeatother
+
+\begin{document}
+
+\title{Big Data Systems - Survey (IN4331)}
+
+\numberofauthors{4}
+
+\author{
+    SB Ramalingam Santhanakrishnan (4740270)\\ \email{S.B.RamalingamSanthanakrishnan@student.tudelft.nl}
+%
+\and Konrad Kleeberger (4748476)\\ \email{k.kleeberger@student.tudelft.nl}
+%
+\and Zhen Sun (4733983)\\ \email{Z.Sun-1@student.tudelft.nl}
+%
+\and Chuting Zhu (4728572)\\ \email{C.Zhu-3@student.tudelft.nl}
+}
+
+\date{5 June 2018}
+
+\maketitle
+
+\begin{abstract}
+
+    Graph processing is a subset of big data processing and specialized systems are being built and improved upon to handle ever increasing demands from various domains, primary on the problems of social networks and search. The survey paper pivots around a benchmark metric called COST (cost of single thread), targeted at the graph analysis systems like GraphX, evaluating its necessity for the enormous level of scalability support for a few select problems, given that they are orders of magnitude faster, when executed on a single core commodity machine with appropriate optimizations. We also take a look at research on graph systems, published after the establishment of COST and conclude on what a decision maker should consider while evaluating such systems in general.
+
+\end{abstract}
+
+\section{Introduction}
+
+\citeauthor{neuman_scale_1994} defined three components for distributed systems to be scalable. The distance between the farthest nodes, the amount of resources and users it can handle and the number of organizations which want to administrate the system. Big Data can be seen as a numeric scalability problem as an increasing amount of data has to be handled without a compromising lost of performance. A systems can either be scaled vertically which means to add more resources like storage, RAM or CPU to an existing machine or scale horizontally as distributing the load over multiple machines.
+
+While vertical scaling can reach a good performance on solving the big data problems, it has some drawbacks which are difficult to be overcome, such as the great risk of one-point failure and limited upgradeability in the future. Therefore, horizontal scaling becomes a great choice when some user request the scalability without too much investment. Dealing with the problem appears in parallelizing the computation, distributing the data and handling failures is a great obstacle for many researchers. 
+
+\section{Big data systems and their scalability demands}
+This section discusses different Big data systems and the property of their design which affect scalability.
+
+\subsection{Batch systems}
+
+The first proposal of a big data system came from Google as they recognized that their developers constantly solved the same problems over and over again when dealing with large amount of raw data like data distribution, fault tolerance or load balancing. Therefore they implemented with MapReduce a framework which solves this problems and allows developers to focus on the problem solving on a higher level \cite{dean2008mapreduce}. It is based on a distributed file system and uses the primitive steps of map and reduce as a programming model. Yahoo created with Hadoop an open source implementation of the Google ecosystem this also includes the MapReduce paper.
+
+MapReduce is a batch processing system as it uses bounded or finite data sets. A map reduce process has to come to and end. 
+
+Google used it for indexing the documents of their web crawler which were data sets of around 20 terabyte.
+- stores everything to disk
+- optimations blabla
+- for what kind of problems is it most suitable?
+
+- how does it scale?
+- what parts make is bad/good for scaling
+
+\subsection{Streaming systems}
+
+\subsection{Graph systems}
+
+With Pregel \cite{malewicz2010pregel} Google introduced a framework for graph processing which handles basic distributed computing challenges and provides a programming model which is suitable for most graph algorithms. The algorithms are centered around a vertex and proceed in rounds which allows synchronization and easier programming in distributed systems. An open source implementation of the paper is Apache Giraph which was developed by Yahoo.
+
+- how does it scale
+- what part makes it bad/good for scaling
+
+
+%Yahoo map/reduce --> Hadoop ecosystem and 
+%Google came up with Pregel for similar reasons. You can use mapreduce but it is not intended therefore
+
+%Batch processing, later stream processing.
+%giraph uses hadoop as a base (maybe version 2 and therefore not map/reduce?)
+
+\section{Limitations of parallelizing}
+
+It is a known fact from Amdahl's law that parallelizing
+
+\section{Contribution and core claims of the chosen paper}
+
+
+
+\section{Research after COST}
+
+\section{Final takeaways}
+
+\bibliographystyle{abbrv}
+\bibliography{references}
+
+\end{document}

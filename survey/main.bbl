@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+
+\bibitem{dean2008mapreduce}
+J.~Dean and S.~Ghemawat.
+\newblock Mapreduce: simplified data processing on large clusters.
+\newblock {\em Communications of the ACM}, 51(1):107--113, 2008.
+
+\bibitem{malewicz2010pregel}
+G.~Malewicz, M.~H. Austern, A.~J. Bik, J.~C. Dehnert, I.~Horn, N.~Leiser, and
+  G.~Czajkowski.
+\newblock Pregel: a system for large-scale graph processing.
+\newblock In {\em Proceedings of the 2010 ACM SIGMOD International Conference
+  on Management of data}, pages 135--146. ACM, 2010.
+
+\bibitem{neuman_scale_1994}
+B.~C. Neuman.
+\newblock Scale in distributed systems.
+\newblock In {\em Readings in Distributed Computing Systems}, pages 463--489.
+  {IEEE} Computer Society Press.
+
+\end{thebibliography}
